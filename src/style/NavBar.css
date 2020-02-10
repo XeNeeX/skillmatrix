@@ -5,6 +5,9 @@ nav,
   list-style-type: none;
   width: fit-content;
 }
+li {
+  text-decoration: none;
+}
 
 .option {
   text-transform: uppercase;

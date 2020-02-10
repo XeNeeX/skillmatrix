@@ -20,7 +20,7 @@
   max-width: 30%;
   margin-top: 5px;
 }
-:placeholder {
+::placeholder {
   opacity: 1;
   color: #fff;
 }
