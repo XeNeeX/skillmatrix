@@ -1,0 +1,20 @@
+nav,
+.nav {
+  text-align: left;
+  margin-top: 10vh;
+  list-style-type: none;
+  width: fit-content;
+}
+
+.option {
+  text-transform: uppercase;
+  transition: 0.2s;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #111111;
+}
+
+.option:hover {
+  border-left: 20px solid cyan;
+}
