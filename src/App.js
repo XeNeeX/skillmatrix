@@ -4,8 +4,8 @@ import "./App.css";
 
 import Header from "./layout/Header";
 import NavBar from "./layout/NavBar";
-import Matrix from "./layout/Matrix";
 import Footer from "./layout/Footer";
+import Page from "./layout/Page";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       <div className="App">
         <header>{<Header />}</header>
         <nav>{<NavBar />}</nav>
-        <main>{<Matrix />}</main>
+        <main>{<Page />}</main>
         <footer>{<Footer />}</footer>
       </div>
     </Router>
