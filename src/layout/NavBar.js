@@ -29,7 +29,7 @@ const NavBar = () => {
           to={option.redirect}
           exact={option.exact ? option.exact : false}
         >
-          {option.name}
+          <span class="name">{option.name}</span>
         </NavLink>
       </li>
     </em>
