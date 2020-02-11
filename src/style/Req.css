@@ -1,0 +1,16 @@
+.tbl{
+    position: absolute;
+    top: 10vh;
+    left: 300px;
+    right: 200px;
+    float: right;
+    width: fit-content;
+}
+.vert{
+    font-size: 15px;
+    word-wrap: break-word;
+    height: auto;
+    transform: rotate(-90deg);
+    width:auto;
+    margin-top: 60px;
+}

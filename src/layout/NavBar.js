@@ -23,18 +23,16 @@ const options = [
 
 const NavBar = () => {
   const menu = options.map(option => (
-    <em>
-      <li class="option" key={option.id}>
-        <NavLink
-          to={option.redirect}
-          exact={option.exact ? option.exact : false}
-        >
-          <span class="name">{option.name}</span>
-        </NavLink>
-      </li>
-    </em>
+    <li className="option" key={option.id}>
+      <NavLink
+        to={option.redirect}
+        exact={option.exact ? option.exact : false}
+      >
+        <span className="name">{option.name}</span>
+      </NavLink>
+    </li>
   ));
-  return <ul class="nav">{menu}</ul>;
+  return <ul>{menu}</ul>;
 };
 
 export default NavBar;

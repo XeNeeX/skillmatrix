@@ -1,4 +1,15 @@
-main {
-  display: block;
+section {
+  display: flex;
   text-align: center;
+}
+aside{
+  display: flex;
+  float: left;
+  padding: 10px;
+  width: fit-content;
+  list-style-type: none;
+}
+
+section, aside{
+  align-items: baseline;
 }

@@ -12,8 +12,8 @@ function App() {
     <Router>
       <div className="App">
         <header>{<Header />}</header>
-        <nav>{<NavBar />}</nav>
-        <main>{<Page />}</main>
+        <aside>{<NavBar />}</aside>
+        <section>{<Page />}</section>
         <footer>{<Footer />}</footer>
       </div>
     </Router>
