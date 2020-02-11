@@ -7,10 +7,11 @@
     width: fit-content;
 }
 .vert{
-    font-size: 15px;
-    word-wrap: break-word;
+    font-size: 10px;;
+    word-wrap: nowrap;
     height: auto;
     transform: rotate(-90deg);
     width:auto;
     margin-top: 60px;
+    padding: 20px;
 }
