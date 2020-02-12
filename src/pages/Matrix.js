@@ -1,9 +1,10 @@
-import React, { Component } from "react";
-import "../style/Matrix.css";
-import Req from '../components/Req'
+import React from 'react';
+import '../style/Matrix.css'
 
-export default class Matrix extends Component {
-  render() {
-    return <div class="matrix"><Req /></div>;
-  }
+const Matrix = () => {
+  return (
+    <div>matrix</div>
+  );
 }
+
+export default Matrix;

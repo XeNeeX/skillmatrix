@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Main from "../pages/Main";
 import Contact from "../pages/Contact";
 import Matrix from "../pages/Matrix";
-
+import "../style/Page.css";
 const Page = () => {
   return (
     <>
