@@ -4,7 +4,6 @@ import {
   Button,
   Nav,
   Navbar,
-  NavItem,
   Form,
   FormControl
 } from "react-bootstrap";
