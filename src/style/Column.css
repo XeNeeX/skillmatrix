@@ -2,12 +2,12 @@
   display: inline-block;
   border: 1px solid #555;
   transform: rotate(-90deg);
-  width: 270px;
-  min-height: 50px;
-  line-height: 20px;
-  margin-top: 110px;
-  margin-left: -220px;
-  padding-left: 10px;
+  width: 16.364vw;
+  min-height: 3.03vw;
+  line-height: 1.212vw;
+  margin-top: 6.65vw;
+  margin-left: -13.333vw;
+  padding-left: 0.606vw;
   border-left: 3px solid #0066ff;
   text-align: left;
   vertical-align: middle;
@@ -20,25 +20,64 @@
   border: 1px solid #555;
   border-bottom: 3px solid #0066ff;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 1.212vw;
 }
 .hse {
-  width: 50px;
+  width: 3.03vw;
 }
 .fin {
-  width: 100px;
+  width: 6.061vw;
 }
 .log {
-  width: 450px;
+  width: 27.273vw;
 }
 .mgm {
-  width: 150px;
-}
-
-.ctg {
-  margin-left: 100px;
+  width: 9.091vw;
 }
 .stats {
   display: inline-block;
   margin-top: 0;
+}
+.det {
+  height: fit-content;
+  margin-left: 31.667vw;
+  width: 52.083vw;
+}
+.cat {
+  margin-left: -13.34vw;
+}
+.tblstat {
+  display: inline-block;
+  width: 3.03vw;
+  border: 1px solid #555;
+  margin-top: 13.4vh;
+}
+.tblstat2 {
+  display: inline-block;
+  width: 3.03vw;
+  border: 1px solid #555;
+  margin-top: 0;
+}
+.statTrue {
+  background-color: #9cff39;
+}
+.statFalse {
+  background-color: #fbd706;
+  color: #f85c0a;
+}
+.tblreq {
+  width: 15vw;
+  border: 1px solid #555;
+}
+.req {
+  text-align: left;
+  position: absolute;
+  left: 14.1vw;
+  bottom: 7vh;
+  width: 15vw;
+}
+.name {
+  border-top: -50px;
+  position: static;
+  border: 1px solid #555;
 }
