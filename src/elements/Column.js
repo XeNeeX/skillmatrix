@@ -127,13 +127,14 @@ const Column = () => {
                     {statList}
                     <span className="req">
                         {statReq}
-                        <span className="name">
-                            {nameList}
-                        </span>
+                        <div>
+                            <span className="name">
+                                {nameList}
+                            </span>
+                        </div>
                     </span>
                 </span>
-                <div>
-                </div>
+
             </div>
         </>
     );
