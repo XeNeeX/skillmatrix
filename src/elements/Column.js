@@ -1,6 +1,25 @@
 import React from 'react';
 
+
 import '../style/Column.css'
+
+const stats = [
+    { id: "1", required: "8", trained: "8", status: "✔" },
+    { id: "2", required: "3", trained: "4", status: "+1" },
+    { id: "3", required: "2", trained: "3", status: "+1" },
+    { id: "4", required: "8", trained: "8", status: "✔" },
+    { id: "5", required: "8", trained: "7", status: "-1" },
+    { id: "6", required: "5", trained: "5", status: "✔" },
+    { id: "7", required: "8", trained: "8", status: "✔" },
+    { id: "8", required: "8", trained: "8", status: "✔" },
+    { id: "9", required: "8", trained: "6", status: "-2" },
+    { id: "10", required: "8", trained: "7", status: "-1" },
+    { id: "11", required: "8", trained: "8", status: "✔" },
+    { id: "12", required: "8", trained: "8", status: "✔" },
+    { id: "13", required: "1", trained: "2", status: "+1" },
+    { id: "14", required: "1", trained: "1", status: "✔" },
+    { id: "15", required: "8", trained: "8", status: "✔" },
+]
 
 const categories = [
     { id: "1", name: "HSE", class: "hse" },
@@ -27,49 +46,94 @@ const details = [
     { id: "15", name: "Phone Usage" },
 ]
 
-const stats = [
-    { id: "1", required: "8", trained: "8", status: "✔" },
-    { id: "2", required: "3", trained: "4", status: "+1" },
-    { id: "3", required: "2", trained: "3", status: "+1" },
-    { id: "4", required: "8", trained: "8", status: "✔" },
-    { id: "5", required: "8", trained: "7", status: "-1" },
-    { id: "6", required: "5", trained: "5", status: "✔" },
-    { id: "7", required: "8", trained: "8", status: "✔" },
-    { id: "8", required: "8", trained: "8", status: "✔" },
-    { id: "9", required: "8", trained: "6", status: "-2" },
-    { id: "10", required: "8", trained: "7", status: "-1" },
-    { id: "11", required: "8", trained: "8", status: "✔" },
-    { id: "12", required: "8", trained: "8", status: "✔" },
-    { id: "13", required: "1", trained: "2", status: "+1" },
-    { id: "14", required: "1", trained: "8", status: "✔" },
-    { id: "15", required: "8", trained: "8", status: "✔" },
+const statreq = [
+    { id: "1", name: "Required" },
+    { id: "2", name: "Trained" },
+    { id: "3", name: "Training status" }
 ]
 
+const people = [
+    { id: "1", firstName: "Jan", lastName: "Kowalski" },
+    { id: "2", firstName: "Tomasz", lastName: "Nowak" },
+    { id: "3", firstName: "Bartosz", lastName: "Nadolski" },
+    { id: "4", firstName: "Dominik", lastName: "Bos" },
+    { id: "5", firstName: "Paweł", lastName: "Furowicz" },
+    { id: "6", firstName: "Kamil", lastName: "Nodocki" },
+    { id: "7", firstName: "Piotr", lastName: "Grzybowski" },
+    { id: "8", firstName: "Karol", lastName: "Strzelecki" },
+]
+
+
 const Column = () => {
+
+    const nameList = people.map(person => (
+        <div className="name">
+            <div><b>{person.lastName}, {person.firstName}</b></div>
+        </div>
+    ))
+
+
     const catList = categories.map(category => (
         <div className={category.class}>
             {category.name}
         </div>
     ))
     const detList = details.map(detail => (
-        <div className="category">
+        <div className="category position-relative">
             {detail.name}
         </div>
     ))
-    const statList = stats.map(stat => (
-        <div className="stats">
 
+    const reqList = stats.map(stat => (
+        <>
+            <div className="tblstat">{stat.required}</div>
+        </>
+    ));
+
+    const trdList = stats.map(stat => (
+        <>
+            <div className="tblstat2">{stat.trained}</div>
+        </>
+    ));
+
+    const statList = stats.map(stat => (
+        <div className="tblstat2">
+            <div className={stat.trained >= stat.required ? 'statTrue' : 'statFalse'}>{stat.status}</div>
         </div>
+    ));
+
+    const statReq = statreq.map(name => (
+        <div className="tblreq">{name.name}</div>
     ))
     return (
         <>
-            {catList}
-            <br />
-            <div style={{ marginLeft: "556px", width: "1000px" }}>
+            <div className="det">
+                <span className="cat">
+                    {catList}
+                </span>
+                <br />
                 {detList}
-            </div>
-            <div>
-                {statList}
+
+                <br />
+                <span className="cat">
+                    {reqList}
+                </span>
+                <br />
+                <span className="cat">
+                    {trdList}
+                </span>
+                <br />
+                <span className="cat">
+                    {statList}
+                    <span className="req">
+                        {statReq}
+                        <span className="name">
+                            {nameList}
+                        </span>
+                    </span>
+                </span>
+                <div>
+                </div>
             </div>
         </>
     );
