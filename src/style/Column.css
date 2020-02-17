@@ -12,11 +12,11 @@
   text-align: left;
   vertical-align: middle;
 }
+
 .hse,
 .fin,
 .log,
 .mgm {
-  display: inline-block;
   border: 1px solid #555;
   border-bottom: 3px solid #0066ff;
   text-align: center;
@@ -35,7 +35,6 @@
   width: 9.091vw;
 }
 .stats {
-  display: inline-block;
   margin-top: 0;
 }
 .det {

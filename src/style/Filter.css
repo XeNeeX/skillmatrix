@@ -1,0 +1,7 @@
+.filter {
+  border: 1px solid #555;
+  border-radius: 10px;
+  width: fit-content;
+  padding: 10px;
+  position: absolute;
+}
