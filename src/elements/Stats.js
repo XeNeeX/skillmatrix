@@ -3,6 +3,7 @@ import '../style/Stats.css'
 
 export default class Stats extends Component {
     state = {
+
         stats: [
             { id: 1, required: "8", trained: "8", status: "✔" },
             { id: 2, required: "3", trained: "4", status: "+1" },

@@ -3,6 +3,7 @@ import '../style/Matrix.css'
 import Column from '../elements/Column';
 import CatHeader from '../elements/CatHeader'
 import Stats from '../elements/Stats'
+import Legend from '../elements/Legend'
 
 
 const Matrix = () => {
@@ -15,6 +16,7 @@ const Matrix = () => {
             <div style={{ marginLeft: "9.7vw" }}>
                 <Stats />
             </div>
+            <Legend />
         </div>
     );
 }
