@@ -4,3 +4,24 @@
   margin-right: auto;
   text-align: center;
 }
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  margin-left: 100px;
+}
+
+.div1 {
+  grid-area: 1 / 1 / 6 / 2;
+  width: 250px;
+  height: fit-content;
+  position: absolute;
+  top: 630px;
+  left: 290px;
+}
+.div2 {
+  grid-area: 1 / 2 / 6 / 5;
+}

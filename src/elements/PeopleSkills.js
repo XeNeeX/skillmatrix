@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
+import '../style/Stats.css'
+
 
 export default class PeopleSkills extends Component {
-    render() {
-        state = [
-            { id: 1, firstName: "Jan", lastName: "Kowalski", }
+    state = {
+        names: [
+            { id: 1, firstName: "Jan", lastName: "Kowalski" },
+            { id: 2, firstName: "Jarosław", lastName: "Kowalski" }
         ]
-        const symbols = ['🎖', '🏅', '🥉', '🥈', '🥇', '🏆']
-        return (
-            <div> PeopleSkills </div>
-        );
+    }
+    render() {
+        const nameList = this.state.names.map(name => (
+            <div className="name"><b>{name.lastName}, {name.firstName}</b></div>
+        ))
+        return nameList
     }
 }

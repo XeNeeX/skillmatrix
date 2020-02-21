@@ -44,7 +44,7 @@ class Header extends Component {
             placeholder="Find a document"
             className="mr-sm-2"
           />
-          <Button variant="outline-info">Search</Button>
+          <Button variant="info">Search</Button>
         </Form>
       </Navbar>
     );

@@ -28,6 +28,7 @@
   width: 15vw;
 }
 .name {
+  width: 250px;
   display: block;
   border-top: -50px;
   position: static;

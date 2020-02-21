@@ -75,9 +75,3 @@
   bottom: 11.8vh;
   width: 15vw;
 }
-.name {
-  display: block;
-  border-top: -50px;
-  position: static;
-  border: 1px solid #555;
-}

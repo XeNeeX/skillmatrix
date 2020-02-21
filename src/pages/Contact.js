@@ -36,7 +36,7 @@ class Contact extends Component {
         <h1 className="text-center" style={{ marginTop: "15%" }}>
           Contact me!
         </h1>
-        <div class="container-md text-center">
+        <div className="container-md text-center">
           <Form>
             <Form.Row>
               <Form.Group as={Col} controlId="formGridEmail">
