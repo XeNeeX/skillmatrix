@@ -1,14 +1,12 @@
 import React, {useState} from 'react';
 import '../style/Stats.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button, Modal} from 'react-bootstrap'
-import {Formik, Form, Field} from 'formik'
+import {Formik} from 'formik'
 import * as Yup from 'yup'
 import DisplayFormikState from './Helper'
 
 
-const MyInput = ({field, form, ...props}) => {
-    return <input {...field} {...props} />;
-};
 const initialValues = { email: "1", email2: "2" };
 
 const PeopleSkills = () =>{
