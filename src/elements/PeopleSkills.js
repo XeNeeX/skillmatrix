@@ -34,7 +34,7 @@ const PeopleSkills = () =>{
         <Modal.Title>Add new user</Modal.Title>
         <Modal.Body>
         <Formik
-        initialValues={{ name: "Name"}}
+        initialValues={{ name: ""}}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
             alert(JSON.stringify(values, null, 2));
@@ -72,7 +72,7 @@ const PeopleSkills = () =>{
           return (
             <form onSubmit={handleSubmit}>
               <label htmlFor="name" style={{ display: "block" }}>
-                Email
+                Name
               </label>
               <input
                 name="name"
