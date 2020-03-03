@@ -7,7 +7,7 @@ import * as Yup from 'yup'
 import DisplayFormikState from './Helper'
 
 
-const initialValues = { email: "1", email2: "2" };
+const initialValues = { name: "" };
 
 const PeopleSkills = () =>{
 
@@ -34,7 +34,7 @@ const PeopleSkills = () =>{
         <Modal.Title>Add new user</Modal.Title>
         <Modal.Body>
         <Formik
-        initialValues={{ email: "1", email2: "2" }}
+        initialValues={{ name: "Name"}}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
             alert(JSON.stringify(values, null, 2));
@@ -42,11 +42,8 @@ const PeopleSkills = () =>{
           }, 500);
         }}
         validationSchema={Yup.object().shape({
-          email: Yup.string()
-            .email()
-            .required("Required"),
-          email2: Yup.string()
-            .email()
+          name: Yup.string()
+            .min(2)
             .required("Required")
         })}
       >
@@ -74,47 +71,26 @@ const PeopleSkills = () =>{
 
           return (
             <form onSubmit={handleSubmit}>
-              <label htmlFor="email" style={{ display: "block" }}>
+              <label htmlFor="name" style={{ display: "block" }}>
                 Email
               </label>
               <input
-                name="email"
-                id="email"
-                placeholder="Enter your email"
+                name="name"
+                id="name"
+                placeholder="Enter your name"
                 type="text"
-                value={values.email}
+                value={values.name}
                 onChange={onChange}
                 onBlur={handleBlur}
                 className={
-                  errors.email && touched.email
+                  errors.name && touched.name
                     ? "text-input error"
                     : "text-input"
                 }
               />
-              {errors.email && touched.email && (
-                <div className="input-feedback">{errors.email}</div>
+              {errors.name && touched.name && (
+                <div className="input-feedback">{errors.name}</div>
               )}
-              <label htmlFor="email" style={{ display: "block" }}>
-                Email 2
-              </label>
-              <input
-                name="email2"
-                id="email2"
-                placeholder="Enter your email 2"
-                type="text"
-                value={values.email2}
-                onChange={onChange}
-                onBlur={handleBlur}
-                className={
-                  errors.email2 && touched.email2
-                    ? "text-input error"
-                    : "text-input"
-                }
-              />
-              {errors.email2 && touched.email2 && (
-                <div className="input-feedback">{errors.email2}</div>
-              )}
-
               <button
                 type="button"
                 className="outline"
