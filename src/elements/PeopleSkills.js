@@ -35,11 +35,8 @@ const PeopleSkills = () =>{
         <Modal.Body>
         <Formik
         initialValues={{ name: ""}}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 500);
+        onSubmit={(values) => {
+         names.concat(values)
         }}
         validationSchema={Yup.object().shape({
           name: Yup.string()
@@ -99,9 +96,12 @@ const PeopleSkills = () =>{
               >
                 Reset
               </button>
+              
               <button type="submit" disabled={isSubmitting}>
                 Submit
               </button>
+
+        }
 
               <DisplayFormikState {...props} />
             </form>
