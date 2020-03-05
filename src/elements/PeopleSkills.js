@@ -100,9 +100,6 @@ const PeopleSkills = () =>{
               <button type="submit" disabled={isSubmitting}>
                 Submit
               </button>
-
-        }
-
               <DisplayFormikState {...props} />
             </form>
         
