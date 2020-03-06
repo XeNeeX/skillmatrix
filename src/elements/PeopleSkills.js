@@ -13,8 +13,6 @@ const PeopleSkills = () =>{
 
   const initialState = {names: ['Jan Kowalski', 'Jarosław Nos'], value: ""}
   const [state, dispatch] = useReducer(reducer, initialState)
-  let value_helper = "test";
-  state.value = value_helper;
 
     let [formValues, setFormValues] = useState(initialValues);
     const [show, setShow] = useState(false);
@@ -46,8 +44,9 @@ const PeopleSkills = () =>{
         <Modal.Body>
         <Formik
         initialValues={{ name: ""}}
-        onSubmit={() => {
-          dispatch({type: 'add', value: value_helper})
+        onSubmit={(value) => {
+          // console.log(arg)
+          dispatch({type: 'add', value: value.name})
         }}
         validationSchema={Yup.object().shape({
           name: Yup.string()
@@ -89,7 +88,6 @@ const PeopleSkills = () =>{
                 id="name"
                 placeholder="Enter your name"
                 type="text"
-                value_helper = {props.values.name}
                 value={values.name}
                 onChange={onChange}
                 onBlur={handleBlur}
