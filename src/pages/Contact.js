@@ -29,6 +29,7 @@ class Contact extends Component {
       emailValue: "",
       msgValue: ""
     });
+  
   };
   render() {
     return (

@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
-import { Button, Modal } from 'react-bootstrap'
+import React from 'react';
+
 //eslint-desable-next-line
 const Legend = () => {
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+
     return (
         <div style={{ position: "absolute", float: "right", top: "25vh", textAlign: "left", width: "350px" }}>
             <b>Verbal Scale</b>
@@ -28,37 +26,6 @@ const Legend = () => {
                     <td><span role="img" aria-label="state1">🏆</span> : Trainer</td>
                 </tr>
             </table>
-            <Button variant="primary" onClick={handleShow} style={{ marginTop: "5%", width: "200px" }}>
-                Add User
-            </Button>
-            <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Add User</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="outline-danger" onClick={handleClose}>Cancel</Button>
-                    <Button variant="outline-primary" onClick={handleClose}>Save Changes</Button>
-                </Modal.Footer>
-            </Modal>
-
-            <Button variant="primary" onClick={handleShow} style={{ marginTop: "5%", width: "200px" }}>
-                Add Category
-            </Button>
-            <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Add Category</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="outline-danger" onClick={handleClose}>Cancel</Button>
-                    <Button variant="outline-primary" onClick={handleClose}>Save Changes</Button>
-                </Modal.Footer>
-            </Modal>
         </div>
     );
 }

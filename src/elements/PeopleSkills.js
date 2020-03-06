@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useReducer} from 'react';
 import '../style/Stats.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button, Modal} from 'react-bootstrap'
@@ -11,20 +11,31 @@ const initialValues = { name: "" };
 
 const PeopleSkills = () =>{
 
+  const initialState = {names: ['Jan Kowalski', 'Jarosław Nos'], value: ""}
+  const [state, dispatch] = useReducer(reducer, initialState)
+  let value_helper = "test";
+  state.value = value_helper;
+
     let [formValues, setFormValues] = useState(initialValues);
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-        let names = [
-            'Jan Kowalski',
-            'Jarosław Nos'
-        ]
 
-        const nameList = names.map(name=>(
-            <div className="name"><b>{name}</b></div>
-        ))
+
+    function reducer(state, action) {
+      switch (action.type) {
+        case "add" : 
+        return {names: [...state.names, state.value]};
+        default:
+          throw new Error();
+      }
+    }
+
+    const names = state.names.map(name => (
+      <div className="name"><b>{name}</b></div>
+    ))
     return (
         <> 
     <Button variant="primary" onClick={handleShow} style={{ marginTop: "5%", width: "200px",  }}>
@@ -35,8 +46,8 @@ const PeopleSkills = () =>{
         <Modal.Body>
         <Formik
         initialValues={{ name: ""}}
-        onSubmit={(values) => {
-         names.concat(values)
+        onSubmit={() => {
+          dispatch({type: 'add', value: value_helper})
         }}
         validationSchema={Yup.object().shape({
           name: Yup.string()
@@ -56,12 +67,14 @@ const PeopleSkills = () =>{
             handleSubmit,
             handleReset
           } = props;
+
           const onChange = e => {
             const targetEl = e.target;
             const fieldName = targetEl.name;
             setFormValues({
               ...formValues,
-              [fieldName]: targetEl.value
+              [fieldName]: targetEl.value,
+
             });
             return handleChange(e);
           };
@@ -76,6 +89,7 @@ const PeopleSkills = () =>{
                 id="name"
                 placeholder="Enter your name"
                 type="text"
+                value_helper = {props.values.name}
                 value={values.name}
                 onChange={onChange}
                 onBlur={handleBlur}
@@ -105,11 +119,11 @@ const PeopleSkills = () =>{
         
           );
               }}
-      </Formik>
+     </Formik>
         </Modal.Body>
         <Modal.Footer style={{textAlign:"center"}}>This name is going to appear on the people list of the matrix</Modal.Footer>
     </Modal>
-        {nameList}
+        {names}
     
 
     
